@@ -1,8 +1,8 @@
-from Load import LoadJson #this way you can import specipic class
+from LoadApi import LoadData #this way you can import specipic class
 
 def main():
-    lc=LoadJson()
-    print(lc.getStepTimers('Crock'))
+    ld=LoadData()
+    print(ld.idSearch('47746'))
 
 if __name__ == '__main__':
     main()
