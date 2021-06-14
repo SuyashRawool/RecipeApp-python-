@@ -6,7 +6,7 @@ class LoadData:
     def __init__(self):
         self.url='https://forkify-api.herokuapp.com/api/'
 
-    def makeRequest(self,Url):
+    def __makeRequest(self,Url):
         rawdata = requests.get(Url)
         jData = rawdata.text
         data = json.loads(jData)
@@ -14,8 +14,8 @@ class LoadData:
 
     def querySearch(self,query): #It returns a dictionary with two values count and list name recipes of passed query.
         searchUrl=self.url+'search?q='+query
-        return self.makeRequest(searchUrl)
+        return self.__makeRequest(searchUrl)
 
     def idSearch(self,id): #It gives dictionary with one value recipe which is a dictionary with recipe details.
         searchUrl=self.url+'get?rId='+id
-        return self.makeRequest(searchUrl) #Add "['recipe']['publisher']" this at the end of return data to get publisher detail.
+        return self.__makeRequest(searchUrl) #Add "['recipe']['publisher']" this at the end of return data to get publisher detail.
