@@ -10,6 +10,7 @@ class SearchEngine:
         self.ld=LoadData()
 
 
+
     def checkWord(self,word):#use it in main class , returns None if all good
         if(len(word.split())>1):
             return 'Please Use One word'
@@ -27,6 +28,33 @@ class SearchEngine:
 
         return data
 
+    def setData(self,id):
+        self.data = self.ld.idSearch(id)
+
+    #the functions with 'f' are fast functions these take load time once
+    def getRecipef(self):
+        return self.data['recipe']['ingredients']
+
+
+    def getPublisherf(self):
+        return self.data['recipe']['publisher']
+
+    def getTitlef(self):
+        return self.data['recipe']['title']
+
+    def getSourceUrlf(self):
+        return self.data['recipe']['source_url']
+
+    def getImagef(self):
+        return self.data['recipe']['image_url']
+
+    def getPublisherUrlf(self):
+        return self.data['recipe']['publisher_url']
+
+    def getRankf(self):
+        return self.data['recipe']['social_rank']
+
+    #these are seperate search functions these will take time to load data
     def getRecipe(self,id):
         data=self.ld.idSearch(id)['recipe']['ingredients']
         str=""
