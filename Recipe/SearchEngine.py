@@ -23,7 +23,7 @@ class SearchEngine:
 
         if(list(data.keys())[0]=='error'): #this condition only occurs if Api returns an error
             spell = Speller()
-            data=ld.querySearch(spell(word))
+            data= self.ld.querySearch(spell(word))
             return data
 
         return data
