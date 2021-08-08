@@ -74,10 +74,14 @@ def findBtn():
     se = SearchEngine()
     query = searchBox.get('1.0', END)
     query = query.strip()
+    print(query)
+    if(se.checkWord(query)==True): #Checks for multiWords
+        print('Word is OK')
+    else:
+        strVar.set('Please use one word')
+        return
 
-
-
-    try:
+    try: #Exception might occur when word is not present
         data = se.searchQuery(query)['recipes']
         strVar.set("")
     except:

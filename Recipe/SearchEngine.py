@@ -13,8 +13,8 @@ class SearchEngine:
 
     def checkWord(self,word):#use it in main class , returns None if all good
         if(len(word.split())>1):
-            return 'Please Use One word'
-
+            return False
+        return True
     def availabeQueries(self):
         return 'https://forkify-api.herokuapp.com/phrases.html'
 
@@ -23,7 +23,7 @@ class SearchEngine:
 
         if(list(data.keys())[0]=='error'): #this condition only occurs if Api returns an error
             spell = Speller()
-            data= self.ld.querySearch(spell(word))
+            data=ld.querySearch(spell(word))
             return data
 
         return data
