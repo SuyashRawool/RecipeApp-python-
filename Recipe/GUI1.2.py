@@ -133,7 +133,7 @@ canvas = Canvas(root, height=768, width=1366, bg='#263D42')
 canvas.pack()
 
 frame1 = LabelFrame(root, bg='#a855ff')
-frame2 = LabelFrame(root, bg='#edaaff')
+frame2 = LabelFrame(root, bg='#F39C12')
 frame1.place(relheight=1.0, relwidth=0.5, x=0, y=0)
 frame2.place(relheight=1.0, relwidth=0.5, relx=0.5, y=0)
 
@@ -143,7 +143,7 @@ searchBox.place(relwidth=0.6, relx=0.2, rely=0.04)
 searchBox.insert(END, 'Search...')
 
 myFont = font.Font(size=14)
-submit = Button(frame2, text='Find', fg='white',
+submit = Button(frame2, text='Find', fg='white', # find button
                 bg='#3498DB', command=findBtn, bd=4)
 submit['font'] = myFont
 submit.place(relwidth=0.2, relx=0.4, rely=0.1)
@@ -181,7 +181,7 @@ homeCanvas.create_image(0,0, anchor=NW, image=img)
 #Error Label
 strVar = StringVar()
 strVar.set("")
-erLabel = Label(frame2,textvariable=strVar, bg='#edaaff')
+erLabel = Label(frame2,textvariable=strVar, bg='#F39C12')
 erLabel.place( relx=0.7, rely=0.12)
 #Error Label
 

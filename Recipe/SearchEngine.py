@@ -1,30 +1,26 @@
 from LoadApi import LoadData
-from autocorrect import Speller #pip install autocorrect ,link:https://github.com/fsondej/autocorrect
-import asyncio
+#from autocorrect import Speller #pip install autocorrect ,link:https://github.com/fsondej/autocorrect
+
 
 
 class SearchEngine:
     'This is searchEngine class'
-
     def __init__(self):
         self.ld=LoadData()
-
 
 
     def checkWord(self,word):#use it in main class , returns None if all good
         if(len(word.split())>1):
             return False
         return True
+
     def availabeQueries(self):
         return 'https://forkify-api.herokuapp.com/phrases.html'
 
     def searchQuery(self,word): #Aproach LoadApi through this function only
         data=self.ld.querySearch(word)
 
-        if(list(data.keys())[0]=='error'): #this condition only occurs if Api returns an error
-            spell = Speller()
-            data=ld.querySearch(spell(word))
-            return data
+
 
         return data
 
