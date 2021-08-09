@@ -171,7 +171,7 @@ myCanvas.create_window((0, 0), window=myFrame, anchor='nw')
 homeCanvas = Canvas(frame1)
 homeCanvas.place( relwidth = 1.0, relheight = 1.0, relx=0.0, rely=0.0)
 
-homeImage = Image.open("./src/side1.jpg")
+homeImage = Image.open("./src/cover2.jpeg")
 resize1 = homeImage.resize((800, 800))
 
 img = ImageTk.PhotoImage(resize1)
